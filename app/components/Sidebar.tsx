@@ -5,11 +5,12 @@ import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import { getVisibleSidebarMenuItems, type SidebarMenuItem, UserRole } from "@/types/rbac";
 
-type IconName = "dashboard" | "projects" | "contracts" | "transmittals" | "timesheets" | "finance" | "settings" | "menu" | "close" | "chevron";
+type IconName = "dashboard" | "stakeholders" | "projects" | "contracts" | "transmittals" | "timesheets" | "finance" | "settings" | "menu" | "close" | "chevron";
 
 function Icon({ name, className }: { name: IconName; className?: string }) {
   const drawings: Record<IconName, ReactNode> = {
     dashboard: <><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></>,
+    stakeholders: <><circle cx="9" cy="8" r="3" /><path d="M3.5 20c.5-3.3 2.5-5 5.5-5s5 1.7 5.5 5M16 7h5M18.5 4.5v5" /></>,
     projects: <><path d="M3 7h7l2 2h9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" /><path d="M3 10h18" /></>,
     contracts: <><path d="M6 3h9l3 3v15H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" /><path d="M14 3v4h4M8 12h8M8 16h6" /></>,
     transmittals: <><path d="M4 4h16v12H4z" /><path d="m4 6 8 6 8-6M8 20h8" /></>,
@@ -24,7 +25,7 @@ function Icon({ name, className }: { name: IconName; className?: string }) {
 }
 
 function menuIcon(item: SidebarMenuItem): IconName {
-  return ({ "/": "dashboard", "/projects": "projects", "/contracts": "contracts", "/transmittals": "transmittals", "/timesheets": "timesheets", "/finance": "finance", "/settings": "settings" } as Record<string, IconName>)[item.href] ?? "dashboard";
+  return ({ "/": "dashboard", "/stakeholders": "stakeholders", "/projects": "projects", "/contracts": "contracts", "/transmittals": "transmittals", "/timesheets": "timesheets", "/finance": "finance", "/settings": "settings" } as Record<string, IconName>)[item.href] ?? "dashboard";
 }
 
 export function Sidebar({ activeRole }: { activeRole: UserRole }) {
