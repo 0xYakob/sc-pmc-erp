@@ -23,6 +23,7 @@ export interface SidebarMenuItem {
 export const sidebarMenuItems: SidebarMenuItem[] = [
   { label: "Dashboard", href: "/", description: "Portfolio and operational overview", allowedRoles: Object.values(UserRole) },
   { label: "Stakeholders & Clients", href: "/stakeholders", description: "Client, contractor, and stakeholder registry", allowedRoles: Object.values(UserRole) },
+  { label: "Tenders & Proposals", href: "/tenders", description: "Tender pipeline and proposal management", allowedRoles: [UserRole.ADMIN, UserRole.PROJECT_MANAGER, UserRole.STRUCTURAL_LEAD] },
   { label: "Projects", href: "/projects", description: "Project delivery and administration", allowedRoles: [UserRole.ADMIN, UserRole.PROJECT_MANAGER, UserRole.RESIDENT_ENGINEER, UserRole.STRUCTURAL_LEAD, UserRole.CLIENT_REP] },
   { label: "Contracts", href: "/contracts", description: "Contracts, milestones, and variations", allowedRoles: [UserRole.ADMIN, UserRole.PROJECT_MANAGER, UserRole.CLIENT_REP] },
   { label: "Transmittals & RFIs", href: "/transmittals", description: "Document control and correspondence", allowedRoles: [UserRole.ADMIN, UserRole.PROJECT_MANAGER, UserRole.RESIDENT_ENGINEER, UserRole.STRUCTURAL_LEAD, UserRole.CLIENT_REP] },
