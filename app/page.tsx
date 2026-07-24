@@ -1,3 +1,5 @@
-import { ModulePage } from "@/app/components/ModulePage";
+import { DashboardWorkspace } from "@/app/components/dashboard/DashboardWorkspace";
 
-export default function DashboardPage() { return <ModulePage eyebrow="Executive overview" title="Delivery intelligence, in one place." description="Monitor projects, resources, document control, and commercial commitments across the consultancy." primaryAction="Open project register" cards={[{ label: "Active projects", value: "24", detail: "4 due for milestone review" }, { label: "Fee pipeline", value: "ETB 48.2M", detail: "Qualified contract and variation value" }, { label: "Timesheets pending", value: "18", detail: "Awaiting manager approval" }]} workflow={["Three RFIs are approaching their contractual response date.", "Field supervision logs are due from two active sites.", "Six staff allocations need confirmation for next month."]} />; }
+export default function DashboardPage() {
+  return <DashboardWorkspace />;
+}
