@@ -1,0 +1,3 @@
+import { ModulePage } from "@/app/components/ModulePage";
+
+export default function ProjectsPage() { return <ModulePage eyebrow="Project controls" title="Project register" description="Create, govern, and monitor consultancy projects from mobilization through closeout." primaryAction="Create project" cards={[{ label: "Active", value: "24", detail: "Across five client portfolios" }, { label: "At risk", value: "3", detail: "Require management attention" }, { label: "Closing this quarter", value: "5", detail: "Final deliverables in progress" }]} workflow={["Set up project teams, work breakdowns, and delivery dates.", "Track risks, issues, milestones, and contract obligations.", "Review status reports with the responsible project manager."]} />; }
